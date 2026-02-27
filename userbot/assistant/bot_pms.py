@@ -116,13 +116,13 @@ async def bot_start(event):  # sourcery skip: low-code-quality
             start_msg = f"Hey! 👤{mention},\
                         \nI am {my_mention}'s assistant bot.\
                         \nYou can contact to my master from here.\
-                        \n\nPowered by [AliReza](https://t.me/MOTFKRM)"
+                        \n\nPowered by [#AliReza](https://t.me/MOTFKRM)"
         buttons = [
             (
-                Button.url("AliReza", "https://T.me/MOTFKRM"),
+                Button.url("👤г-н Алиреза", "https://T.me/MOTFKRM"),
                 Button.url(
-                    "Deploy",
-                    "https://github.com/TgCatUB/nekopack",
+                    "📂Channel",
+                    "https://t.me/TFKORAT",
                 ),
             )
         ]
