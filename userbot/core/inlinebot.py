@@ -53,33 +53,33 @@ def main_menu():
     text = f"𝗖𝗮𝘁𝗨𝘀𝗲𝗿𝗯𝗼𝘁 𝗛𝗲𝗹𝗽𝗲𝗿\
         \n𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗱 𝗯𝘆 {mention}"
     buttons = [
-        (Button.inline("ℹ️ Info", data="check"),),
+        (Button.inline("⌬ 𝗜𝗻𝗳𝗼 📚", data="check"),),
         (
-            Button.inline(f"👮‍♂️ Admin ({len(GRP_INFO['admin'])})", data="admin_menu"),
-            Button.inline(f"🤖 Bot ({len(GRP_INFO['bot'])})", data="bot_menu"),
+            Button.inline(f"⌬ 𝗔𝗱𝗺𝗶𝗻 🧳  ({len(GRP_INFO['admin'])})", data="admin_menu"),
+            Button.inline(f"⌬ 𝗕𝗼𝘁 🛸 ({len(GRP_INFO['bot'])})", data="bot_menu"),
         ),
         (
-            Button.inline(f"🎨 Fun ({len(GRP_INFO['fun'])})", data="fun_menu"),
-            Button.inline(f"🧩 Misc ({len(GRP_INFO['misc'])})", data="misc_menu"),
+            Button.inline(f"⌬ 𝗙𝘂𝗻 🎁 ({len(GRP_INFO['fun'])})", data="fun_menu"),
+            Button.inline(f"⌬ 𝗠𝗶𝘀𝗰 🗃 ({len(GRP_INFO['misc'])})", data="misc_menu"),
         ),
         (
-            Button.inline(f"🧰 Tools ({len(GRP_INFO['tools'])})", data="tools_menu"),
-            Button.inline(f"🗂 Utils ({len(GRP_INFO['utils'])})", data="utils_menu"),
+            Button.inline(f"⌬ 𝗧𝗼𝗼𝗹𝘀 🛠  ({len(GRP_INFO['tools'])})", data="tools_menu"),
+            Button.inline(f"⌬ 𝗨𝘁𝗶𝗹𝘀 ⚙️   ({len(GRP_INFO['utils'])})", data="utils_menu"),
         ),
         (
-            Button.inline(f"➕ Extra ({len(GRP_INFO['extra'])})", data="extra_menu"),
-            Button.inline("🔒 Close Menu", data="close"),
+            Button.inline(f"⌬ 𝗘𝘅𝘁𝗿𝗮 ✨ ({len(GRP_INFO['extra'])})", data="extra_menu"),
+            Button.inline("⌬ 𝗖𝗹𝗼𝘀𝗲 🗑", data="close"),
         ),
     ]
     if Config.BADCAT:
         switch_button = [
             (
-                Button.inline(f"➕ Extra ({len(GRP_INFO['extra'])})", data="extra_menu"),
+                Button.inline(f"⌬ 𝗘𝘅𝘁𝗿𝗮 ✨ ({len(GRP_INFO['extra'])})", data="extra_menu"),
                 Button.inline(
-                    f"⚰️ Useless ({len(GRP_INFO['useless'])})", data="useless_menu"
+                    f"⌬ 𝗨𝘀𝗲𝗹𝗲𝘀𝘀 🗳 ({len(GRP_INFO['useless'])})", data="useless_menu"
                 ),
             ),
-            (Button.inline("🔒 Close Menu", data="close"),),
+            (Button.inline("⌬ 𝗖𝗹𝗼𝘀𝗲 🗑", data="close"),),
         ]
         buttons = buttons[:-1] + switch_button
 
@@ -132,8 +132,8 @@ async def help_article(event):
     help_info = main_menu()
     return await build_article(
         event,
-        title="Help Menu",
-        description="Help menu for CatUserbot.",
+        title="𝗛𝗲𝗹𝗽 𝗠𝗲𝗻𝘂",
+        description="𝗛𝗲𝗹𝗽 𝗠𝗲𝗻𝘂 𝗳𝗼𝗿 𝗧𝗵𝘀𝗲𝗹𝗳",
         thumbnail=get_thumb("help.png"),
         text=help_info[0],
         buttons=help_info[1],
@@ -163,16 +163,16 @@ async def filemanager_article(event):
 async def deploy_article(event):
     buttons = [
         (
-            Button.url("Source code", "https://github.com/TgCatUB/catuserbot"),
-            Button.url("Deploy", "https://github.com/TgCatUB/nekopack"),
+            Button.url("👤г-н Алиреза", "https://t.me/MOTFKRM"),
+            Button.url("📂Channel", "https://t.me/TFKORAT"),
         )
     ]
     return await build_article(
         event,
-        title="𝘾𝙖𝙩𝙐𝙨𝙚𝙧𝙗𝙤𝙩",
+        title="𝗧𝗵𝘀𝗲𝗹𝗳",
         description="Deploy yourself.",
         media="https://github.com/TgCatUB/CatUserbot-Resources/raw/master/Resources/Inline/catlogo.png",
-        text="𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗖𝗮𝘁𝗨𝘀𝗲𝗿𝗯𝗼𝘁.",
+        text="𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗧𝗵𝘀𝗲𝗹𝗳.",
         buttons=buttons,
     )
 
@@ -223,7 +223,7 @@ async def vcplayer_article(event):
 
         return await build_article(
             event,
-            title="CatVc Player",
+            title="THSelf Player",
             media=vcimg,
             text=text,
             description="Manange Vc Stream.",
@@ -236,13 +236,13 @@ async def vcplayer_article(event):
 
 async def article_builder(event, method):
     media = thumb = None
-    title = "Cat Userbot"
-    description = "Button menu for CatUserbot"
+    title = "𝗧𝗵𝘀𝗲𝗹𝗳"
+    description = "Button menu for THSelf"
     if method == "ialive":
         buttons = [
             (
                 Button.inline("Stats", data="stats"),
-                Button.url("Repo", "https://github.com/TgCatUB/catuserbot"),
+                Button.url("#AliReza", "https://t.me/MOTFKRM"),
             )
         ]
         try:
@@ -251,9 +251,9 @@ async def article_builder(event, method):
             query = catalive_text()
         except Exception:
             return None
-        title = "Cat Alive"
+        title = "THSelf Alive"
         thumb = get_thumb("alive.png")
-        description = "Alive menu for CatUserbot."
+        description = "Alive menu for THSelf."
         ALIVE_PIC = gvarstatus("ALIVE_PIC")
         IALIVE_PIC = gvarstatus("IALIVE_PIC")
         if IALIVE_PIC:
@@ -380,13 +380,13 @@ def paginate_help(
                 modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
             ] + [
                 (
-                    Button.inline("⌫", data=f"{prefix}_prev({modulo_page})_plugin"),
-                    Button.inline("⚙️ Main Menu", data="mainmenu"),
-                    Button.inline("⌦", data=f"{prefix}_next({modulo_page})_plugin"),
+                    Button.inline("←", data=f"{prefix}_prev({modulo_page})_plugin"),
+                    Button.inline("📦𝗠𝗮𝗶𝗻", data="mainmenu"),
+                    Button.inline("→", data=f"{prefix}_next({modulo_page})_plugin"),
                 )
             ]
         else:
-            pairs = pairs + [(Button.inline("⚙️ Main Menu", data="mainmenu"),)]
+            pairs = pairs + [(Button.inline("📦𝗠𝗮𝗶𝗻", data="mainmenu"),)]
     elif len(pairs) > number_of_rows:
         if category_pgno < 0:
             category_pgno = len(pairs) + category_pgno
@@ -395,15 +395,15 @@ def paginate_help(
         ] + [
             (
                 Button.inline(
-                    "⌫",
+                    "←",
                     data=f"{prefix}_prev({modulo_page})_command_{category_plugins}_{category_pgno}",
                 ),
                 Button.inline(
-                    "⬅️ Back ",
+                    "⚠️𝗕𝗮𝗰𝗸",
                     data=f"back_plugin_{category_plugins}_{category_pgno}",
                 ),
                 Button.inline(
-                    "⌦",
+                    "→",
                     data=f"{prefix}_next({modulo_page})_command_{category_plugins}_{category_pgno}",
                 ),
             )
@@ -414,7 +414,7 @@ def paginate_help(
         pairs = pairs + [
             (
                 Button.inline(
-                    "⬅️ Back ",
+                    "⚠️𝗕𝗮𝗰𝗸",
                     data=f"back_plugin_{category_plugins}_{category_pgno}",
                 ),
             )
